@@ -25,18 +25,18 @@ Si la cadena es de longitud impar, devuelve el caracter central.
 Si la longitud de la cadena es par, devuelve "Solo funciono con cadenas de longitud impar".*/
 
 
-function caracterCentral(string){
+function caracterCentral(string) {
     var emptytstring = string.length === 0;
     var esPar = string.length % 2 === 0;
 
-    if (emptytstring){
+    if (emptytstring) {
         return "la cadena no puede estar vacia";
-    }else if (esPar) {
+    } else if (esPar) {
         return "Solo funciono con longitud impar";
     } else {
-      var index = (string.length -1)/2;
-      // var middle = Math.floor(string.length / 2);
-      return string[index];
+        var index = (string.length - 1) / 2;
+        // var middle = Math.floor(string.length / 2);
+        return string[index];
     }
 }
 
@@ -51,13 +51,19 @@ console.log("El caracer central de " + string1 + "es " + caracterCentral(string1
 Vamos a crear una función que toma un parámetro que es un array de números.
 La función va a devolver un array que contiene sólo los números pares del array original.*/
 
-encuentraPares([1, 3, 5, 6, 7, 9]);
+var numbers = [1, 3, 5, 6, 7, 9];
 
-function encuentraPares(numeros) {
+function encuentraPares(numbers) {
     var par = [];
-    for (i = 0; i < numeros.length; i++) {
-        if (numeros[i] / 2 === 0) {
-            par[par.length] = numeros[i]
+    for (i = 0; i < numbers.length; i++) {
+        if (numbers[i] % 2 === 0) {
+            par[par.length] = numbers[i]
+            /*  par.push(numbers[i]);:The push() method adds one or more elements to the end of an array
+            and returns the new length of the array.
+            Syntax--> arr.push([element1[, ...[, elementN]]])*/
         }
     }
-    return par
+    return par;
+}
+
+console.log(encuentraPares([1, 3, 4, 5, 7, 8, 9, 0]));
