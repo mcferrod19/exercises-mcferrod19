@@ -7,20 +7,32 @@ Al puntuar, las cartas suman su valor excepto si es un as que suma 20.
 
 Prueba a invocarla con varias manos de cartas con y sin ases*/
 
-function scoreHand(hand){
-  var total = 0;
-  for (var i=0; i<=hand.length; i=i+1){
-    var value = hand[i].number;
-    if (hand[i].number === 1){
-      value = 40;
+function scoreHand(hand) {
+    var total = 0;
+    for (var i = 0; i <= hand.length; i = i + 1) {
+        var value = hand[i].number;
+        if (hand[i].number === 1) {
+            value = 40;
+        }
+        total = total + value;
     }
-    total = total + value;
-  }
-  console.log("score is:" + total);
+    console.log("score is:" + total);
 }
 
-var handOne = [{number:7, suit:"Diamonds"},{number:9, suit:"Hearts"}];
-var handTwo = [{number:6, suit:"Spades"},{number:1, suit:"Diamonds"}];
+var handOne = [{
+    number: 7,
+    suit: "Diamonds"
+}, {
+    number: 9,
+    suit: "Hearts"
+}];
+var handTwo = [{
+    number: 6,
+    suit: "Spades"
+}, {
+    number: 1,
+    suit: "Diamonds"
+}];
 
 scoreHand(handOne);
 scoreHand(handTwo);
@@ -44,19 +56,19 @@ Prueba a invocarla con varias manos de cartas.*/
 //   console.log("Score is: " + total);
 // }
 
-function scoreHand(hand){
-  var total = 0;
-  for (var i=0; i<=hand.length; i=i+1){
-    var value = hand[i].number;
-    if (hand[i].number === 1){
-      value = 20;
+function scoreHand(hand) {
+    var total = 0;
+    for (var i = 0; i <= hand.length; i = i + 1) {
+        var value = hand[i].number;
+        if (hand[i].number === 1) {
+            value = 20;
+        }
+        if (hand[i].suit === "Hearts" || hand[i].suit === "Diamonds") {
+            value = value * 2;
+        }
+        total = total + value;
     }
-    if (hand[i].suit === "Hearts" || hand[i].suit === "Diamonds"){
-      value = value * 2;
-    }
-    total = total + value;
-  }
-  console.log("Score is: " + total);
+    console.log("Score is: " + total);
 }
 
 /*Exercise 3:
